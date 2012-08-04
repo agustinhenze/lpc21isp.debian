@@ -1,0 +1,24 @@
+Author: Agustin Henze <tin@sluc.org.ar>
+Description: CMake build support added
+
+--- /dev/null
++++ lpc21isp-1.8.3/CMakeLists.txt
+@@ -0,0 +1,18 @@
++PROJECT(lpc21isp)
++CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++
++ADD_EXECUTABLE(${PROJECT_NAME}
++    adprog.c
++    lpc21isp.c
++    lpcprog.c
++    lpcterm.c
++)
++
++# Install sentences
++INSTALL(TARGETS ${PROJECT_NAME}
++  RUNTIME DESTINATION bin
++)
++INSTALL(FILES
++    ${CMAKE_CURRENT_SOURCE_DIR}/README
++    DESTINATION share/doc/${PROJECT_NAME}
++)

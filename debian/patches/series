@@ -1,0 +1,2 @@
+01-support_cmake_build_system.patch
+02-macros_disabled_for_build_in_armhf_and_armelf.patch

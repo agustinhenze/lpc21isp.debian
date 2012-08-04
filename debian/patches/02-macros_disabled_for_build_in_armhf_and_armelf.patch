@@ -1,0 +1,18 @@
+Author: Agustin Henze <tin@sluc.org.ar>
+Description: Macros disabled for build in armhf and armel
+
+Index: lpc21isp-1.8.3/lpc21isp.h
+===================================================================
+--- lpc21isp-1.8.3.orig/lpc21isp.h	2011-06-30 10:56:38.000000000 -0300
++++ lpc21isp-1.8.3/lpc21isp.h	2012-08-04 17:15:13.000000000 -0300
+@@ -38,10 +38,6 @@
+ #elif defined(__CYGWIN__)
+ #define COMPILE_FOR_CYGWIN
+ #define COMPILED_FOR "Cygwin"
+-#elif defined(__arm__) || defined(__thumb__)
+-#define COMPILE_FOR_LPC21
+-#define COMPILED_FOR "ARM"
+-#define printf iprintf
+ #elif defined(__APPLE__)
+ #define COMPILE_FOR_LINUX
+ #define COMPILED_FOR "Apple MacOS X"

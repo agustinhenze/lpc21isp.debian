@@ -1,0 +1,15 @@
+Source: lpc21isp
+Section: devel
+Priority: extra
+Maintainer: Agustin Henze <tin@sluc.org.ar>
+Build-Depends: debhelper (>= 9), cmake, cdbs, dpkg-dev (>= 1.16.1~)
+Standards-Version: 3.9.3
+Homepage: http://sourceforge.net/projects/lpc21isp/
+
+Package: lpc21isp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: In-circuit programming (ISP)
+ In-circuit programming (ISP) tool for the NXP(Philips)
+ LPC1100/LPC1300/LPC1700/LPC2000 series ARM7/Cortex-M0/
+ Cortex-M3 microcontrollers.

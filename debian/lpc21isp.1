@@ -1,0 +1,131 @@
+.\" Manpage for lpc21isp.
+.\" Contact tin@sluc.org.ar to correct errors or typos.
+.TH man 1 "02 Aug 2012" "1.8.3" "lpc21isp man page"
+.\" --------------------------------------------------------------------
+
+.SH NAME
+.\" --------------------------------------------------------------------
+lpc21isp \- Is an in-circuit programming (ISP) tool for the NXP(Philips) microcontrollers
+
+.\" --------------------------------------------------------------------
+.SH SYNOPSIS
+.\" --------------------------------------------------------------------
+.SY lpc21isp
+.OP [Options]
+.OP file[ file[ ...]]
+.OP comport
+.OP baudrate
+.OP Oscillator_in_kHz
+
+.SY lpc21isp
+.OP \-bin
+.OP \-hex
+.OP \-term
+.OP \-termonly
+.OP \-localecho
+.OP \-detectonly
+.OP \-debug0
+.OP \-debug3
+.OP \-debug5
+.OP \-donotstart
+.OP \-try<n>
+.OP \-wipe
+.OP \-control
+.OP \-controlswap
+.OP \-controlinv
+.OP \-verify
+.OP \-logfile
+.OP \-halfduplex
+.OP \-ADARM
+.OP \-PHILIPSARM
+
+.\" --------------------------------------------------------------------
+.SH DESCRIPTION
+.\" --------------------------------------------------------------------
+lpc21isp is an in-circuit programming (ISP) tool for the NXP(Philips) LPC1100/LPC1300/LPC1700/LPC2000 series ARM7/Cortex-M0/Cortex-M3 microcontrollers.
+
+.\" --------------------------------------------------------------------
+.SH OPTIONS
+.\" --------------------------------------------------------------------
+.TP
+.B \-bin
+for uploading binary file
+.
+.TP
+.B \-hex
+for uploading file in intel hex format (default)
+.
+.TP
+.B \-term
+for starting terminal after upload
+.
+.TP
+.B \-termonly
+for starting terminal without an upload
+.
+.TP
+.B \-localecho
+for local echo in terminal
+.
+.TP
+.B \-detectonly
+detect only used LPC chiptype (PHILIPSARM only)
+.
+.TP
+.B \-debug0
+for no debug
+.
+.TP
+.B \-debug3
+for progress info only
+.
+.TP
+.B \-debug5
+for full debug
+.
+.TP
+.B \-donotstart
+do not start MCU after download
+.
+.TP
+.B \-try<n>
+try
+.BR n
+times to synchronise
+.
+.TP
+.B \-wipe
+Erase entire device before upload
+.
+.TP
+.B \-control
+for controlling RS232 lines for easier booting (Reset = DTR, EnableBootLoader = RTS)
+.
+.TP
+.B \-controlswap
+swap RS232 control lines (Reset = RTS, EnableBootLoader = DTR)
+.
+.TP
+.B \-controlinv
+Invert state of RTS & DTR (0=true/assert/set, 1=false/deassert/clear).
+.
+.TP
+.B \-verify
+Verify the data in Flash after every writes to sector. To detect errors in writing to Flash ROM
+.
+.TP
+.B \-logfile
+for enabling logging of terminal output to lpc21isp.log
+.
+.TP
+.B \-halfduplex
+use halfduplex serial communication (i.e. with K-Line)
+.
+.TP
+.B \-ADARM
+for downloading to an Analog Devices ARM microcontroller ADUC70xx
+.
+.TP
+.B \-PHILIPSARM
+for downloading to a microcontroller from NXP(Philips) LPC13xx/LPC17xx/LPC2000 family (default)
+.

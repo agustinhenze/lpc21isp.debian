@@ -1,3 +1,15 @@
+lpc21isp (1.85-1) unstable; urgency=low
+
+  * Imported Upstream version 1.85
+  * Added git-buildpackage config
+  * Removed patch 02-macros_disabled_for_build_in_armhf_and_armelf, fixed in
+    the upstream release.
+  * Improved package description.
+  * Added Vcs-git and Vcs-Browser fields
+  * Added upstream changelog
+
+ -- Agustin Henze <tin@sluc.org.ar>  Tue, 05 Feb 2013 22:02:51 -0300
+
 lpc21isp (1.8.3-2) unstable; urgency=low
 
   * Fix FTBFS on armhf and armel: Disable weird macros.

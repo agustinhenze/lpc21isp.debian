@@ -1,3 +1,10 @@
+lpc21isp (1.85-2) unstable; urgency=low
+
+  * Bumped Standard-Version to 3.9.4 (no changes required)
+  * Fixed lintian warning about non-canonical vcs field.
+
+ -- Agustin Henze <tin@sluc.org.ar>  Fri, 22 Mar 2013 18:36:17 -0300
+
 lpc21isp (1.85-1) unstable; urgency=low
 
   * Imported Upstream version 1.85

@@ -1,3 +1,51 @@
+1.94   2013-08-10 Martin Maurer
+                  Add (assumed) part id values for LPC4333 and LPC4337
+                  Correct table entries for all LPC43xx part id numbers
+                  (missing flag for two word part ids and second word for LPC4333 and LPC4353)
+                  Merge in optimization (thanks to Stefan) to skip empty sectors
+                  Correct help output of "-boothold"
+                  Add workaround table entry for LPC4357 and word1 equal to 0x0EF60000
+                  Bugfix for wrong check of word0/word1 combination
+                  Correct a lot entries in lpc property table of LPC18xx and LPC43xx
+                  LPC18xx and LPC43xx: Add warning message, that wipe erases only bank A
+1.93   2013-07-05 Andrew Pines
+                  changed Makefile to exclude "-static" from CFLAGS when building for OS X
+                  changed serial timeout for *nix to use select
+                  added -boothold argument to assert ISP throughtout programming sequence
+                  added support for -try<n> command line argument (was in help, didn't actually work)
+1.92   2013-06-29 Martin Maurer
+                  Thanks to Phil for reporting Linux compile errors
+                  Update README
+1.91   2013-06-28 Torsten Lang, Uwe Schneider GmbH
+                  Minor bugfix for the residual data handling
+1.90   2013-06-27 Martin Maurer
+                  Add checksum calculation for LPC8XX
+                  winmm function only available in MSVC, put ifdefs around
+                  Workaround for lost characters of LPC8XX
+1.89   2013-06-27 Martin Maurer
+                  Thanks to Manuel and Henri for bugfixes and speed-ups
+                  Bugfix: In case of LPC8XX, XON/XOFF handling must be switched off,
+                  otherwise download gets broken, because XON/XOFF are filtered out...
+1.88   2013-04-25 Torsten Lang, Uwe Schneider GmbH
+                  Fixed answer evaluation
+                  Added sector tables for LPC1833
+                  XON/XOFF handling according to LPC manual
+                  Changed COMMTIMEOUTS settings according to MS help
+                  Changed waiting code from tick counting to system time usage
+                  Set MM timers to 1ms resolution (otherwise waiting in the serial driver is limited to multiples of 10ms)
+                  Send all commands with <CR><LF> according to NXP UM
+                  Change answer evaluation to match at least LPC17xx and LPC18xx families (LPC17xx just mirrors the first character of
+                    the LF sequence, LPC18xx mirrors the first character and adds an <LF> which then will lead to a <CR><LF><LF>
+                    sequence, all other lines are terminated with <CR><LF> as documented)
+                  Change answer formatting by filtering leading <LF> characters because they can be left over from a previous response
+                  Store residual data of an answer (required for the J command which will deliver two words in case of the LPC18xx)
+                  Expanded configuration table by second identification word and usage flag
+                  Do a two stage scan in case that a device with two identification words is detected
+1.87   2012-12-18 Philip Munts
+                  Added a section of code to ResetTarget() in lpc21isp.c to allow using Linux GPIO pin
+                  to control reset and ISP.
+1.86   2012-12-14 diskrepairman
+                  Added devices: LPC1114/203 LPC1114/303 LPC1114/323 LPC1114/333 LPC1115/303
 1.85   2012-12-13 Philip Munts
                   Fixed conditional compilation logic in lpc21isp.h to allow compiling for ARM Linux.
 1.84   2012-09-27 Philip Munts
@@ -44,7 +92,7 @@
                   Added support for multiple HEX files, besed on internal version 1.37B.
                   NOTE: this feature is used in production in 1.37B but is not tested in this version.
                   Added numeric debug level command line switch -debugn, n=[0-5]
-                  Added command line scitch -try n to specify nQuestionMarks limit. Defaul: 100
+                  Added command line scitch -try n to specify nQuestionMarks limit. Default: 100
                   Merged in DoNotStart patch from cgommel_new
                   Static functions declarations moved from lpc21isp.h to this file
                   Modified LoadFile() to return error_code instead exit(1)
@@ -102,7 +150,7 @@
                   software compiled with Borland C++ Builder 5. I had to do some minor changes
                   for Borland (see defined __BORLANDC__) and modified to code slightly to have
                   some simple callbacks for screen i/o (see define INTEGRATED_IN_WIN_APP).
-                  Please notet that I don *not* check / modify the part for AnalogDevices !!
+                  Please note that I do *not* check / modify the part for AnalogDevices !!
                   Besides that I fixed some minor issues:
                   added dcb.fOutxCtsFlow = FALSE and dcb.fOutxDsrFlow = FALSE (sometimes required)
                   Now comparing one character less of answer to "Now launching ... code" command
@@ -121,7 +169,7 @@
                   Merged in changes by Erika Stefanini, which were done only for old version 1.49:
                   Added device ids for revision B chips
 1.53   2008-02-25 Changes by Michael Roth
-                  Get priority of debug messages wih -control right
+                  Get priority of debug messages with -control right
 1.52   2008-01-22 Changes by Manuel Koeppen
                   Made compileable again for linux and windows
                   Fixed bug in ClearSerialPortBuffers (linux)

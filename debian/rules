@@ -6,6 +6,9 @@
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/buildflags.mk
 
+UPSTREAM_VERSION := $(shell dpkg-parsechangelog | sed -n -e's/^Version: \(.*\)-[^-]\+/\1/p')
+VERSION_WITHOUT_POINT := $(shell echo $(UPSTREAM_VERSION) | tr -d ".")
+
 %:
 	dh $@
 
@@ -17,3 +20,10 @@ override_dh_auto_build:
 
 override_dh_installchangelogs:
 	dh_installchangelogs debian/lpc21isp.changelog.upstream
+
+get-orig-source:
+		@if [ ! -d "debian" ] ; then \
+			echo 'Run this from the top directory of the Debian source' >&2; \
+			exit 1; \
+		fi
+		wget http://sourceforge.net/projects/lpc21isp/files/lpc21isp/$(UPSTREAM_VERSION)/lpc21isp_$(VERSION_WITHOUT_POINT).tar.gz/download -O ../lpc21isp_$(UPSTREAM_VERSION).orig.tar.gz;

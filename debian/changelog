@@ -1,3 +1,14 @@
+lpc21isp (1.94-1) unstable; urgency=low
+
+  * Add debian/watch file
+  * Imported Upstream version 1.94
+  * Now use dh instead of CDBS for building the package
+  * Convert debian/copyright file to machine readable
+  * Updated upstream changelog
+  * Add get-orig-source target into debian/rules file
+
+ -- Agustin Henze <tin@debian.org>  Thu, 15 Aug 2013 12:20:19 +0200
+
 lpc21isp (1.85-2) unstable; urgency=low
 
   * Bumped Standard-Version to 3.9.4 (no changes required)

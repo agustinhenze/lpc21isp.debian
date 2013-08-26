@@ -1,3 +1,11 @@
+lpc21isp (1.94-2) unstable; urgency=low
+
+  * Remove unnecessary patch
+  * Use my debian account in the Maintainer field
+  * Add get-orig-source target into debian/rules file
+
+ -- Agustin Henze <tin@debian.org>  Mon, 26 Aug 2013 18:15:33 -0300
+
 lpc21isp (1.94-1) unstable; urgency=low
 
   * Add debian/watch file

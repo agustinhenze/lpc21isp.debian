@@ -1,3 +1,25 @@
+1.97   2014-01-09 Martin Maurer
+                  Add some new chip ids for LPC11xx
+                  Updated .gitignore file (Now with ignored *.layout)
+                  Removed *.layout from lpc21isp project
+                  Removed *.depend from lpc21isp project
+1.96   2014-01-08 Martin Maurer merged changes by Moses McKnight
+                  Added devices: LPC1315, LPC1316, LPC1317, LPC1345, LPC1346, LPC1347
+                  Add .gitignore file (MM: Removed *.layout)
+                  Remove lpc21isp.depend
+       2014-01-08 Martin Maurer merged bugfix by smartavionics:
+                  - Wrong length in ReceiveComPort
+                  - Enable SerialTimeoutTick
+       2014-01-08 Martin Maurer merged bugfix by justyn:
+                  - Fix the total sector size fields for 1114.../323 and 1114.../333
+       2014-01-08 Martin Maurer merged bugfix by imyller:
+                  - Support for bad UARTs: added -writedelay command-line switch
+1.95   2014-01-08 Martin Maurer
+                  Add a lot of new chip ids for LPC1763, LPC11Exx, LPC11Uxx
+                  (completely untested because I don't have these chips)
+                  Corrected checking of 2 field chip ids (must be masked)
+                  Corrected Makefile (-static)
+                  Move while directory with files into a subdirectory
 1.94   2013-08-10 Martin Maurer
                   Add (assumed) part id values for LPC4333 and LPC4337
                   Correct table entries for all LPC43xx part id numbers

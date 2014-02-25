@@ -1,3 +1,10 @@
+lpc21isp (1.97-1) unstable; urgency=medium
+
+  * New upstream release version 1.97
+  * Bumped Standard-Version to 3.9.5 (no changes required)
+
+ -- Agustin Henze <tin@debian.org>  Tue, 25 Feb 2014 09:49:03 -0300
+
 lpc21isp (1.94-2) unstable; urgency=low
 
   * Remove unnecessary patch

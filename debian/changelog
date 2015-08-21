@@ -1,3 +1,11 @@
+lpc21isp (1.97-2) unstable; urgency=medium
+
+  * Fix timestamps_from_cpp_macros
+    + Set __DATE__ and __TIME__ macros with the last debian/changelog date
+  * Bumped Standard-Version to 3.9.6 (no changes required)
+
+ -- Agustin Henze <tin@debian.org>  Fri, 21 Aug 2015 18:37:36 +0200
+
 lpc21isp (1.97-1) unstable; urgency=medium
 
   * New upstream release version 1.97

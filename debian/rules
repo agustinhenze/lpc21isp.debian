@@ -8,6 +8,9 @@ include /usr/share/dpkg/buildflags.mk
 
 UPSTREAM_VERSION := $(shell dpkg-parsechangelog | sed -n -e's/^Version: \(.*\)-[^-]\+/\1/p')
 VERSION_WITHOUT_POINT := $(shell echo $(UPSTREAM_VERSION) | tr -d ".")
+export BUILD_TIME = $(shell LC_ALL=C date -u --date="`dpkg-parsechangelog -SDate`" +'%H:%M:%S')
+export BUILD_DATE = $(shell LC_ALL=C date -u --date="`dpkg-parsechangelog -SDate`" +'%b\ %e\ %Y')
+CFLAGS := $(CFLAGS) -D__DATE__=\"$(BUILD_DATE)\" -D__TIME__=\"$(BUILD_TIME)\"
 
 %:
 	dh $@
@@ -16,7 +19,7 @@ override_dh_auto_clean:
 	make clean
 
 override_dh_auto_build:
-	cc $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o lpc21isp lpc21isp.c adprog.c lpcprog.c lpcterm.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o lpc21isp lpc21isp.c adprog.c lpcprog.c lpcterm.c
 
 override_dh_installchangelogs:
 	dh_installchangelogs debian/lpc21isp.changelog.upstream
